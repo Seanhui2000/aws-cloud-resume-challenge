@@ -1,10 +1,9 @@
-name: Update Website Back-End
+name: Update Back-End
 
 on:
-  workflow_dispatch:
   push:
     branches:
-      - main
+    - main
     paths:
       - './infrastructure/lambda.py' # ONLY Lambda function file
 
