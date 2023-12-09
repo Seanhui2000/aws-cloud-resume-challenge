@@ -1,0 +1,37 @@
+name: Update Website Back-End
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - './infrastructure/lambda.py' # ONLY Lambda function file
+
+
+    # Configure AWS credentials via GitHub OIDC provider (for short-lived credentials)
+   # - name: Configure AWS Credentials
+    #  uses: aws-actions/configure-aws-credentials@v1
+    #  with:
+    #    role-to-assume: ${{ secrets.IAMROLE_GHACTIONS_CRC }} # store ARN of IAM Role as a GH repo secret
+    #    aws-region: us-east-1
+    
+
+    # Set Up Terraform
+    - name: Set Up Terraform
+      uses: hashicorp/setup-terraform@v2
+    
+    
+    # Run Terraform 'init'
+    - name: Initialize Terraform
+      run: |
+        cd './infrastructure''
+        terraform init
+
+
+    # Run Terraform 'apply'
+    - name: Apply Changes with Terraform
+      run: |
+        cd './infrastructure'
+        terraform apply --auto-approve
+    
