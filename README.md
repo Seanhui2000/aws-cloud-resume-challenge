@@ -1,4 +1,4 @@
-#Cloud-Resume-Challenge
+# Cloud-Resume-Challenge
 
 The [Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/) was created by [Forrest Brazeal](https://forrestbrazeal.com/) and was designed to help individuals demonstrate and enhance their practical AWS skills. The challenge involves creating a resume website hosted on AWS that demonstrates various cloud-related skills.
 
